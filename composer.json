@@ -1,0 +1,28 @@
+{
+    "name": "ghoster/module-customeravatar",
+    "description": "Add a customer avatar as a customer attribute on customer edit, header",
+    "keywords": [
+        "magento 2",
+        "magento 2 customer avatar",
+        "magento avatar",
+        "magento 2 avatar"
+    ],
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "thinghost76@gmail.com",
+            "name": "Tuyen Nguyen"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "GhoSter\\CustomerAvatar\\": ""
+        }
+    }
+}

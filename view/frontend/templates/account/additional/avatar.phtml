@@ -1,0 +1,51 @@
+<?php
+/**
+ * @var $block \GhoSter\CustomerAvatar\Block\Form\Edit
+ */
+?>
+<fieldset id="avatar-fieldset" class="fieldset avatar-field">
+    <div class="field field-name-avatar">
+        <label class="label" for="avatar">
+            <span class="avatar-title"><?php echo __('Avatar Picture');?></span>
+        </label>
+
+        <div class="control">
+            <div class="fields upload-wrapper">
+                <div class="upload-wrapper input-container" data-bind="scope: 'avatar-uploader'">
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/x-magento-init">
+    {
+        ".upload-wrapper": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "avatar-uploader": {
+                        "label": "<?php echo __('Avatar'); ?>",
+                        "brown":"<?php echo __('Choose file'); ?>",
+                        "btn":"<?php echo __('Upload'); ?>",
+                        "component": "GhoSter_CustomerAvatar/js/form/element/avatar-uploader",
+                        "template": "GhoSter_CustomerAvatar/form/element/uploader/uploader",
+                        "allowedExtensions": "jpg jpeg gif png",
+                        "required": true,
+                        "dataScope": "customer.avatar",
+                        "fileInputId" : "avatar",
+                        "attributeName": "avatar",
+                        "originalAttributeValue": "<?= $block->escapeUrl($block->getAvatar()); ?>",
+                        "originalAvatarUrl" : "<?= $block->escapeUrl($block->getAvatarUrl()); ?>",
+                        "imagePreviewId" : "avatar_preview",
+                        "formElement" : "imageUploader",
+                        "uploaderConfig": {
+                            "url": "<?php echo $block->getUrl('avatar/file/upload'); ?>"
+                        }
+                    }
+               }
+           }
+       }
+    }
+
+    </script>
+</fieldset>

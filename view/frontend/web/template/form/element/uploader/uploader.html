@@ -1,0 +1,39 @@
+<div class="admin__field" visible="visible" css="$data.additionalClasses">
+    <div class="admin__field-control" css="'_with-tooltip': $data.tooltip">
+        <div class="file-uploader" data-role="drop-zone" css="_loading: isLoading">
+            <div class="file-uploader-area">
+
+                <div class="file-uploader-preview">
+                    <a class="preview-link preview-image" click="triggerBrowse.bind($data)">
+                        <img tabindex="0"
+                            attr="
+                        id: $data.imagePreviewId,
+                        src: $data.originalAvatarUrl">
+                    </a>
+
+                    <each args="data: value, as: '$file'" render="$parent.getPreviewTmpl($file)"/>
+                </div>
+
+                <input type="file" afterRender="onElementRender" attr="id: uid, name: inputName, multiple: isMultipleFiles" disable="disabled" />
+
+                <label class="file-uploader-button action-default" attr="for: uid, name: $data.fileUploadButtonName">
+                    <span data-bind="text: $data.btn"></span>
+                </label>
+
+                <span class="file-uploader-spinner"/>
+                <render args="fallbackResetTpl" if="$data.showFallbackReset && $data.isDifferedFromDefault"/>
+            </div>
+
+            <render args="tooltipTpl" if="$data.tooltip"/>
+
+            <div class="admin__field-note" if="$data.notice" attr="id: noticeId">
+                <span html="notice"/>
+            </div>
+
+            <label class="admin__field-error" if="error" attr="for: uid" text="error"/>
+        </div>
+        <render args="$data.service.template" if="$data.hasService()"/>
+    </div>
+
+    <input attr="id: $data.fileInputId, name: $data.attributeName, value: $data.originalAttributeValue" type="hidden"/>
+</div>

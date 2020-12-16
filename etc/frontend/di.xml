@@ -1,0 +1,20 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Customer\CustomerData\SectionPoolInterface">
+        <arguments>
+            <argument name="sectionSourceMap" xsi:type="array">
+                <item name="avatar" xsi:type="string">GhoSter\CustomerAvatar\CustomerData\Avatar</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Customer\Model\Metadata\Form\File">
+        <plugin name="GhoSter_CustomerAvatar::fix_extract_data"
+                type="GhoSter\CustomerAvatar\Plugin\Model\Metadata\Form\FilePlugin"/>
+    </type>
+
+    <type name="GhoSter\CustomerAvatar\Plugin\Model\Metadata\Form\FilePlugin">
+        <arguments>
+            <argument name="attributeCode" xsi:type="string">avatar</argument>
+        </arguments>
+    </type>
+</config>

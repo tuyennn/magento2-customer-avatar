@@ -1,0 +1,26 @@
+<?php
+/** @var GhoSter\CustomerAvatar\Block\Account\Avatar $block */
+?>
+<?php if ($block->isCustomerLoggedIn()) : ?>
+    <li class="avatar welcome" data-bind="scope: 'avatar'">
+        <!-- ko if: avatar().available  -->
+        <img data-bind="attr: {'src': avatar().url}"
+            <?php echo $block->getWidth() ? 'width="' . $block->getWidth() . '"' : '' ?>
+            <?php echo $block->getHeight() ? 'height="' . $block->getHeight() . '"' : '' ?>/>
+        <!-- /ko -->
+    </li>
+
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "avatar": {
+                        "component": "GhoSter_CustomerAvatar/js/view/avatar"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+<?php endif; ?>
