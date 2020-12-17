@@ -19,10 +19,16 @@ class Config
      */
     protected $scopeConfig;
 
-    /** @var StoreManagerInterface */
+    /**
+     * @var StoreManagerInterface
+     */
     protected $storeManager;
 
-
+    /**
+     * Config constructor.
+     * @param ScopeConfigInterface $scopeConfig
+     * @param StoreManagerInterface $storeManager
+     */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
         StoreManagerInterface $storeManager

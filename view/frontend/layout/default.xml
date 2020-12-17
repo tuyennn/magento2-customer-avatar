@@ -3,7 +3,8 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="header.links">
-            <block class="GhoSter\CustomerAvatar\Block\Account\Avatar" name="avatar" before="header">
+            <block class="GhoSter\CustomerAvatar\Block\Account\Avatar" ifconfig="avatar/general/enabled_header"
+                   name="avatar" before="header">
                 <arguments>
                     <argument name="height" xsi:type="string">32</argument>
                     <argument name="width" xsi:type="string">32</argument>

@@ -69,7 +69,7 @@ class Avatar implements SectionSourceInterface
     {
         $customer = $this->customerSession->getCustomer();
 
-        if ($avatar = $customer->getAvatar()
+        if ($avatar = $customer->getData('avatar')
             && $this->config->isEnabledHeader($customer->getStoreId())
         ) {
             return [

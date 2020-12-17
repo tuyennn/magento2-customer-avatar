@@ -7,7 +7,6 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
-use Magento\Framework\Json\Helper\Data;
 use Magento\Framework\View\Result\PageFactory;
 
 /**
@@ -37,18 +36,15 @@ abstract class AbstractUpload extends Action
      * @param Context $context
      * @param ImageUploader $imageUploader
      * @param PageFactory $resultPageFactory
-     * @param Data $jsonHelper
      */
     public function __construct(
         Context $context,
         ImageUploader $imageUploader,
-        PageFactory $resultPageFactory,
-        Data $jsonHelper
+        PageFactory $resultPageFactory
     ) {
         parent::__construct($context);
         $this->imageUploader = $imageUploader;
         $this->resultPageFactory = $resultPageFactory;
-        $this->jsonHelper = $jsonHelper;
     }
 
     /**
@@ -56,7 +52,7 @@ abstract class AbstractUpload extends Action
      *
      * @return boolean
      */
-    protected function _isAllowed()
+    protected function _isAllowed(): bool
     {
         return true;
     }
@@ -64,7 +60,7 @@ abstract class AbstractUpload extends Action
     /**
      * @return string
      */
-    abstract protected function getFileId();
+    abstract protected function getFileId(): string;
 
     /**
      * Upload file controller action

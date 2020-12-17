@@ -71,7 +71,7 @@ class ImageProcessor
      *
      * @return string
      */
-    public function copyFile($imageName): string
+    public function copyFile(string $imageName): string
     {
         try {
             return $this->imageUploader->duplicateFile($imageName);

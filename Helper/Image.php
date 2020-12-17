@@ -104,7 +104,6 @@ class Image extends AbstractHelper
             . DIRECTORY_SEPARATOR . ImageUploader::AVATAR_FOLDER_RESIZED
             . DIRECTORY_SEPARATOR . $width . 'x' . $height;
 
-
         $resizedPath =  '/' . ImageUploader::AVATAR_FOLDER_RESIZED . '/' . $width . 'x' . $height . '/' . $imageName;
         $imageResized = $imageResizedDir . DIRECTORY_SEPARATOR . $imageName;
 

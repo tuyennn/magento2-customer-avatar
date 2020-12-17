@@ -56,7 +56,6 @@ class Data extends AbstractHelper
         $this->assetRepo = $assetRepo;
     }
 
-
     /**
      * @return string
      */
