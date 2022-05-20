@@ -13,7 +13,8 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
 
 /**
- * Class AddAvatarCustomerAttribute for setting up the attribute
+ * @codeCoverageIgnore
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableInterface
 {

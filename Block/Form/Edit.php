@@ -17,6 +17,8 @@ class Edit extends CustomerFormEdit
     protected $customerAvatarHelper;
 
     /**
+     * Get Avatar Url
+     *
      * @return string
      */
     public function getAvatarUrl(): string
@@ -52,6 +54,8 @@ class Edit extends CustomerFormEdit
     }
 
     /**
+     * Get avatar value from customer
+     *
      * @return string
      */
     public function getAvatar(): string

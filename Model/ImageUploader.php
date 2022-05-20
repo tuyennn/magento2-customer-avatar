@@ -57,10 +57,10 @@ class ImageUploader extends CatalogImageUploader
     /**
      * Get base Image path
      *
-     * @param $imageName
+     * @param string $imageName
      * @return string
      */
-    public function getBaseImagePath($imageName): string
+    public function getBaseImagePath(string $imageName): string
     {
         $basePathConf = $this->getBasePath();
         $basePath = $basePathConf . DIRECTORY_SEPARATOR
@@ -80,7 +80,7 @@ class ImageUploader extends CatalogImageUploader
     /**
      * Save file to temp dir
      *
-     * @param $fileId
+     * @param mixed $fileId
      * @return array|string[]
      * @throws LocalizedException
      * @throws \Magento\Framework\Exception\NoSuchEntityException

@@ -78,14 +78,16 @@ class Image extends AbstractHelper
     }
 
     /**
-     * @param $imageName
-     * @param $width
-     * @param null $height
+     * Get Resize Image Url
+     *
+     * @param string $imageName
+     * @param mixed $width
+     * @param mixed $height
      * @return string
      * @throws FileSystemException|NoSuchEntityException
      */
     public function getResizedImageUrl(
-        $imageName,
+        string $imageName,
         $width,
         $height = null
     ): string {
@@ -135,14 +137,14 @@ class Image extends AbstractHelper
     /**
      * Generate Image
      *
-     * @param $imageResizedPath
-     * @param $imageDir
-     * @param $width
-     * @param $height
+     * @param string $imageResizedPath
+     * @param string $imageDir
+     * @param mixed $width
+     * @param mixed $height
      */
     private function _generateResizedImage(
-        $imageResizedPath,
-        $imageDir,
+        string $imageResizedPath,
+        string $imageDir,
         $width,
         $height
     ) {

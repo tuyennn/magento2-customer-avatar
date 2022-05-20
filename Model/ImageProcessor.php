@@ -44,6 +44,8 @@ class ImageProcessor
     }
 
     /**
+     * Move file from temp
+     *
      * @param string $imageName
      * @param bool $returnRelativePath
      * @return string
@@ -59,6 +61,8 @@ class ImageProcessor
     }
 
     /**
+     * Copy, duplicate the file
+     *
      * @param string $imageName
      *
      * @return string

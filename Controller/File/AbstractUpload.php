@@ -57,6 +57,8 @@ abstract class AbstractUpload extends Action
     }
 
     /**
+     * Get File Id
+     *
      * @return string
      */
     abstract protected function getFileId(): string;
