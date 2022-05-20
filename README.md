@@ -11,6 +11,7 @@
 [![Build Status](https://app.travis-ci.com/tuyennn/magento2-customer-avatar.svg?branch=master)](https://app.travis-ci.com/tuyennn/magento2-customer-avatar)
 ---
 ## Overview
+Add a customer avatar as a customer attribute on customer edit, header.
 
 - [Extension on GitHub](https://github.com/tuyennn/magento2-customer-avatar)
 - [Direct download link](https://github.com/tuyennn/magento2-customer-avatar/tarball/master)
