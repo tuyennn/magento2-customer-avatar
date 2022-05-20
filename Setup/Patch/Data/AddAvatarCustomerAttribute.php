@@ -73,6 +73,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
                 'position' => 333,
                 'visible' => true,
                 'system' => false,
+                'required' => false,
                 'user_defined' => true,
                 'is_used_in_grid' => false,
                 'is_visible_in_grid' => true,
