@@ -2,19 +2,22 @@
 
     composer require ghoster/module-customeravatar
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Latest Stable Version](http://poser.pugx.org/ghoster/module-customeravatar/v)](https://packagist.org/packages/ghoster/module-customeravatar)
+[![Total Downloads](http://poser.pugx.org/ghoster/module-customeravatar/downloads)](https://packagist.org/packages/ghoster/module-customeravatar)
+[![Latest Unstable Version](http://poser.pugx.org/ghoster/module-customeravatar/v/unstable)](https://packagist.org/packages/ghoster/module-customeravatar)
+[![License](http://poser.pugx.org/ghoster/module-customeravatar/license)](https://packagist.org/packages/ghoster/module-customeravatar)
+[![PHP Version Require](http://poser.pugx.org/ghoster/module-customeravatar/require/php)](https://packagist.org/packages/ghoster/module-customeravatar)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/thinghost)
-[![Build Status](https://travis-ci.org/tuyennn/magento2-customer-avatar.svg?branch=master)](https://travis-ci.org/tuyennn/magento2-customer-avatar)
-![Version 1.0.0](https://img.shields.io/badge/Version-1.0.0-green.svg)
-
+[![Build Status](https://app.travis-ci.com/tuyennn/magento2-customer-avatar.svg?branch=master)](https://app.travis-ci.com/tuyennn/magento2-customer-avatar)
 ---
-## [![Alt GhoSter](http://thinghost.info/wp-content/uploads/2015/12/ghoster.png "thinghost.info")](http://thinghost.info) Overview
+## Overview
 
 - [Extension on GitHub](https://github.com/tuyennn/magento2-customer-avatar)
 - [Direct download link](https://github.com/tuyennn/magento2-customer-avatar/tarball/master)
 
-![Alt Screenshot-1](http://thinghost.info/wp-content/uploads/2015/12/Selection_089-1000x746.png "thinghost.info")
-![Alt Screenshot-2](http://thinghost.info/wp-content/uploads/2015/12/Selection_090-1000x578.png "thinghost.info")
+![Alt Screenshot-1](./.demo/screenshot_001.jpg)
+![Alt Screenshot-2](./.demo/screenshot_002.jpg)
+![Alt Screenshot-3](./.demo/screenshot_003.jpg)
 
 ## Main Functionalities
 - Add a customer avatar as a customer attribute on customer edit, header.
