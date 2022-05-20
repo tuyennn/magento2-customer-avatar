@@ -57,6 +57,8 @@ class Data extends AbstractHelper
     }
 
     /**
+     * Get place holder url
+     *
      * @return string
      */
     public function getPlaceHolderAvatar(): string

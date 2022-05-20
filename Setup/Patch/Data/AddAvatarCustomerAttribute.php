@@ -6,7 +6,6 @@ namespace GhoSter\CustomerAvatar\Setup\Patch\Data;
 use Magento\Customer\Model\Customer;
 use Magento\Customer\Setup\CustomerSetup;
 use Magento\Customer\Setup\CustomerSetupFactory;
-use Magento\Eav\Model\Entity\Attribute\Set;
 use Magento\Eav\Model\Entity\Attribute\SetFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
@@ -18,8 +17,6 @@ use Magento\Framework\Setup\Patch\PatchRevertableInterface;
  */
 class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableInterface
 {
-    //@codeCoverageIgnoreStart
-
     /**
      * @var ModuleDataSetupInterface
      */
@@ -52,7 +49,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function apply()
     {
@@ -62,7 +59,6 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
         $customerEntity = $customerSetup->getEavConfig()->getEntityType(Customer::ENTITY);
         $attributeSetId = $customerEntity->getDefaultAttributeSetId();
 
-        /** @var $attributeSet Set */
         $attributeSet = $this->attributeSetFactory->create();
         $attributeGroupId = $attributeSet->getDefaultGroupId($attributeSetId);
 
@@ -102,6 +98,9 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 
+    /**
+     * @inheritdoc
+     */
     public function revert()
     {
         $this->moduleDataSetup->getConnection()->startSetup();
@@ -113,7 +112,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getAliases()
     {
@@ -121,7 +120,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public static function getDependencies()
     {
@@ -129,6 +128,4 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
 
         ];
     }
-
-    //@codeCoverageIgnoreEnd
 }
