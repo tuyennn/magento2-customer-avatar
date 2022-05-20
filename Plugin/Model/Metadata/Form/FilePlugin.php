@@ -34,8 +34,10 @@ class FilePlugin
     }
 
     /**
+     * Fix stuffs on attribute extract value
+     *
      * @param File $subject
-     * @param $result
+     * @param mixed $result
      * @param RequestInterface $request
      * @return mixed
      * @throws LocalizedException
@@ -64,9 +66,11 @@ class FilePlugin
     }
 
     /**
+     * Fix stuffs on attribute compact value
+     *
      * @param File $subject
-     * @param $result
-     * @param $value
+     * @param mixed $result
+     * @param mixed $value
      * @return string
      * @throws LocalizedException
      */
@@ -74,7 +78,7 @@ class FilePlugin
     {
         $validFileName = $result;
 
-        if (empty($result)) {
+        if (empty($result) && empty($value)) {
             return $validFileName;
         }
 

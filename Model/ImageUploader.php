@@ -12,10 +12,10 @@ use Magento\Framework\File\Uploader;
  */
 class ImageUploader extends CatalogImageUploader
 {
-    const TMP_PATH_PREFIX = 'tmp';
-    const CUSTOMER_MEDIA_PATH = 'customer';
-    const CUSTOMER_MEDIA_TMP_PATH = 'customer/tmp';
-    const AVATAR_FOLDER_RESIZED = 'avatar';
+    public const TMP_PATH_PREFIX = 'tmp';
+    public const CUSTOMER_MEDIA_PATH = 'customer';
+    public const CUSTOMER_MEDIA_TMP_PATH = 'customer/tmp';
+    public const AVATAR_FOLDER_RESIZED = 'avatar';
 
     /**
      * @inheritdoc
@@ -55,10 +55,12 @@ class ImageUploader extends CatalogImageUploader
     }
 
     /**
-     * @param $imageName
+     * Get base Image path
+     *
+     * @param string $imageName
      * @return string
      */
-    public function getBaseImagePath($imageName): string
+    public function getBaseImagePath(string $imageName): string
     {
         $basePathConf = $this->getBasePath();
         $basePath = $basePathConf . DIRECTORY_SEPARATOR
@@ -75,6 +77,14 @@ class ImageUploader extends CatalogImageUploader
         );
     }
 
+    /**
+     * Save file to temp dir
+     *
+     * @param mixed $fileId
+     * @return array|string[]
+     * @throws LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function saveFileToTmpDir($fileId): array
     {
         $result = parent::saveFileToTmpDir($fileId);
@@ -90,6 +100,8 @@ class ImageUploader extends CatalogImageUploader
     }
 
     /**
+     * Duplicate the file
+     *
      * @param string $fileName
      *
      * @return string
@@ -112,6 +124,8 @@ class ImageUploader extends CatalogImageUploader
     }
 
     /**
+     * Get valid new file name
+     *
      * @param string $basePath
      * @param string $imageName
      *

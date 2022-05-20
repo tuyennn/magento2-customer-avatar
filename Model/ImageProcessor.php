@@ -13,11 +13,6 @@ use Magento\Store\Model\StoreManagerInterface;
 class ImageProcessor
 {
     /**
-     * @var Filesystem
-     */
-    private $filesystem;
-
-    /**
      * @var ImageUploader
      */
     private $imageUploader;
@@ -28,30 +23,22 @@ class ImageProcessor
     protected $imageFactory;
 
     /**
-     * @var StoreManagerInterface
-     */
-    private $storeManager;
-
-    /**
      * ImageProcessor constructor.
-     * @param Filesystem $filesystem
+     *
      * @param ImageUploader $imageUploader
-     * @param StoreManagerInterface $storeManager
      * @param AdapterFactory $imageFactory
      */
     public function __construct(
-        Filesystem $filesystem,
         ImageUploader $imageUploader,
-        StoreManagerInterface $storeManager,
         AdapterFactory $imageFactory
     ) {
-        $this->filesystem = $filesystem;
         $this->imageUploader = $imageUploader;
-        $this->storeManager = $storeManager;
         $this->imageFactory = $imageFactory;
     }
 
     /**
+     * Move file from temp
+     *
      * @param string $imageName
      * @param bool $returnRelativePath
      * @return string
@@ -67,6 +54,8 @@ class ImageProcessor
     }
 
     /**
+     * Copy, duplicate the file
+     *
      * @param string $imageName
      *
      * @return string

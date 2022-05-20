@@ -8,6 +8,9 @@ use Magento\Framework\App\Http\Context as HttpContext;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 
+/**
+ * Class Avatar block
+ */
 class Avatar extends Template
 {
     /**

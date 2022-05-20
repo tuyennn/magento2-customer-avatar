@@ -7,7 +7,12 @@ namespace GhoSter\CustomerAvatar\Controller\File;
  */
 class Upload extends AbstractUpload
 {
-    public function getFileId()
+    /**
+     * Get file id
+     *
+     * @return string
+     */
+    public function getFileId(): string
     {
         return $this->_request->getParam('param_name', 'image');
     }

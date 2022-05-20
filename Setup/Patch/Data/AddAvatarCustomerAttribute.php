@@ -6,14 +6,14 @@ namespace GhoSter\CustomerAvatar\Setup\Patch\Data;
 use Magento\Customer\Model\Customer;
 use Magento\Customer\Setup\CustomerSetup;
 use Magento\Customer\Setup\CustomerSetupFactory;
-use Magento\Eav\Model\Entity\Attribute\Set;
 use Magento\Eav\Model\Entity\Attribute\SetFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
 
 /**
- * Class AddAvatarCustomerAttribute for setting up the attribute
+ * @codeCoverageIgnore
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableInterface
 {
@@ -49,7 +49,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function apply()
     {
@@ -59,7 +59,6 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
         $customerEntity = $customerSetup->getEavConfig()->getEntityType(Customer::ENTITY);
         $attributeSetId = $customerEntity->getDefaultAttributeSetId();
 
-        /** @var $attributeSet Set */
         $attributeSet = $this->attributeSetFactory->create();
         $attributeGroupId = $attributeSet->getDefaultGroupId($attributeSetId);
 
@@ -73,6 +72,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
                 'position' => 333,
                 'visible' => true,
                 'system' => false,
+                'required' => false,
                 'user_defined' => true,
                 'is_used_in_grid' => false,
                 'is_visible_in_grid' => true,
@@ -98,6 +98,9 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 
+    /**
+     * @inheritdoc
+     */
     public function revert()
     {
         $this->moduleDataSetup->getConnection()->startSetup();
@@ -109,7 +112,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getAliases()
     {
@@ -117,7 +120,7 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public static function getDependencies()
     {

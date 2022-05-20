@@ -21,11 +21,6 @@ class Avatar implements SectionSourceInterface
     private $customerSession;
 
     /**
-     * @var StoreManagerInterface
-     */
-    private $storeManager;
-
-    /**
      * @var ImageHelper
      */
     protected $imageHelper;
@@ -43,20 +38,17 @@ class Avatar implements SectionSourceInterface
     /**
      * Avatar constructor.
      * @param Session $customerSession
-     * @param StoreManagerInterface $storeManager
      * @param ImageHelper $imageHelper
      * @param Config $config
      * @param LayoutFactory $layoutFactory
      */
     public function __construct(
         Session $customerSession,
-        StoreManagerInterface $storeManager,
         ImageHelper $imageHelper,
         Config $config,
         LayoutFactory $layoutFactory
     ) {
         $this->customerSession = $customerSession;
-        $this->storeManager = $storeManager;
         $this->imageHelper = $imageHelper;
         $this->config = $config;
         $this->layout = $layoutFactory->create();
@@ -69,7 +61,15 @@ class Avatar implements SectionSourceInterface
     {
         $customer = $this->customerSession->getCustomer();
 
-        if ($avatar = $customer->getData('avatar')
+        if (!$this->config->isEnabledHeader($customer->getStoreId())) {
+            return [
+                'available' => false
+            ];
+        }
+
+        $avatar = $customer->getData('avatar');
+
+        if (!empty($avatar)
             && $this->config->isEnabledHeader($customer->getStoreId())
         ) {
             return [

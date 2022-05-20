@@ -12,7 +12,7 @@ use Magento\Store\Model\StoreManagerInterface;
  */
 class Config
 {
-    const XML_PATH_ENABLED_HEADER = 'avatar/general/enabled_header';
+    protected const XML_PATH_ENABLED_HEADER = 'avatar/general/enabled_header';
 
     /**
      * @var ScopeConfigInterface
@@ -38,6 +38,8 @@ class Config
     }
 
     /**
+     * Determine header display enabled
+     *
      * @param null|string|bool|int|Store $store
      * @return bool
      */
