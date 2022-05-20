@@ -13,11 +13,6 @@ use Magento\Store\Model\StoreManagerInterface;
 class ImageProcessor
 {
     /**
-     * @var Filesystem
-     */
-    private $filesystem;
-
-    /**
      * @var ImageUploader
      */
     private $imageUploader;
@@ -29,16 +24,14 @@ class ImageProcessor
 
     /**
      * ImageProcessor constructor.
-     * @param Filesystem $filesystem
+     *
      * @param ImageUploader $imageUploader
      * @param AdapterFactory $imageFactory
      */
     public function __construct(
-        Filesystem $filesystem,
         ImageUploader $imageUploader,
         AdapterFactory $imageFactory
     ) {
-        $this->filesystem = $filesystem;
         $this->imageUploader = $imageUploader;
         $this->imageFactory = $imageFactory;
     }
