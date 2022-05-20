@@ -38,6 +38,8 @@ class Config
     }
 
     /**
+     * Determine header display enabled
+     *
      * @param null|string|bool|int|Store $store
      * @return bool
      */

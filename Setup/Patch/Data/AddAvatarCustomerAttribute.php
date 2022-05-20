@@ -18,6 +18,8 @@ use Magento\Framework\Setup\Patch\PatchRevertableInterface;
  */
 class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableInterface
 {
+    //@codeCoverageIgnoreStart
+
     /**
      * @var ModuleDataSetupInterface
      */
@@ -127,4 +129,6 @@ class AddAvatarCustomerAttribute implements DataPatchInterface, PatchRevertableI
 
         ];
     }
+
+    //@codeCoverageIgnoreEnd
 }
