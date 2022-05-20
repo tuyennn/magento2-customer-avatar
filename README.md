@@ -26,6 +26,9 @@ Add a customer avatar as a customer attribute on customer edit, header.
 - Private content for loading avatar on header.
 - Modern uploader from customer edit page.
 
+## Support
+- Magento >= 2.3.x
+
 ## Installation
 \* = in production please use the `--keep-generated` option
 
