@@ -8,15 +8,20 @@
         "magento 2 avatar"
     ],
     "type": "magento2-module",
+    "version": "1.0.0",
     "license": "proprietary",
     "authors": [
         {
             "email": "thinghost76@gmail.com",
-            "name": "Tuyen Nguyen"
+            "name": "Tuyen Nguyen",
+            "role": "Magento Developer"
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "~7.3.0||~7.4.0||~8.0.0",
+        "magento/framework": "~102.0.6-p1||~103.0.1||~103.0.4"
+    },
     "autoload": {
         "files": [
             "registration.php"
