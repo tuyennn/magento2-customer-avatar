@@ -34,6 +34,8 @@ class FilePlugin
     }
 
     /**
+     * Fix stuffs on attribute extract value
+     *
      * @param File $subject
      * @param $result
      * @param RequestInterface $request
@@ -64,6 +66,8 @@ class FilePlugin
     }
 
     /**
+     * Fix stuffs on attribute compact value
+     *
      * @param File $subject
      * @param $result
      * @param $value
@@ -74,7 +78,7 @@ class FilePlugin
     {
         $validFileName = $result;
 
-        if (empty($result)) {
+        if (empty($result) && empty($value)) {
             return $validFileName;
         }
 

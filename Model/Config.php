@@ -12,7 +12,7 @@ use Magento\Store\Model\StoreManagerInterface;
  */
 class Config
 {
-    const XML_PATH_ENABLED_HEADER = 'avatar/general/enabled_header';
+    protected const XML_PATH_ENABLED_HEADER = 'avatar/general/enabled_header';
 
     /**
      * @var ScopeConfigInterface

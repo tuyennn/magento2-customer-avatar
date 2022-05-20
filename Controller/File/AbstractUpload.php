@@ -7,6 +7,7 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\Json\Helper\Data as JsonHelper;
 use Magento\Framework\View\Result\PageFactory;
 
 /**
@@ -15,8 +16,6 @@ use Magento\Framework\View\Result\PageFactory;
 abstract class AbstractUpload extends Action
 {
     /**
-     * Image uploader
-     *
      * @var ImageUploader
      */
     protected $imageUploader;
@@ -27,7 +26,7 @@ abstract class AbstractUpload extends Action
     protected $resultPageFactory;
 
     /**
-     * @var Data
+     * @var JsonHelper
      */
     protected $jsonHelper;
 

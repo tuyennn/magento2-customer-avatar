@@ -15,6 +15,9 @@ use Magento\Framework\Image\Adapter\AdapterInterface;
 use Magento\Framework\Image\AdapterFactory;
 use Magento\Store\Model\StoreManagerInterface;
 
+/**
+ * Image Processor helper
+ */
 class Image extends AbstractHelper
 {
     /** @var DirectoryList */

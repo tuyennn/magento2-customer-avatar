@@ -28,26 +28,18 @@ class ImageProcessor
     protected $imageFactory;
 
     /**
-     * @var StoreManagerInterface
-     */
-    private $storeManager;
-
-    /**
      * ImageProcessor constructor.
      * @param Filesystem $filesystem
      * @param ImageUploader $imageUploader
-     * @param StoreManagerInterface $storeManager
      * @param AdapterFactory $imageFactory
      */
     public function __construct(
         Filesystem $filesystem,
         ImageUploader $imageUploader,
-        StoreManagerInterface $storeManager,
         AdapterFactory $imageFactory
     ) {
         $this->filesystem = $filesystem;
         $this->imageUploader = $imageUploader;
-        $this->storeManager = $storeManager;
         $this->imageFactory = $imageFactory;
     }
 
